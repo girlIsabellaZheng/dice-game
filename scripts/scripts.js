@@ -42,6 +42,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
         rollCount = 0;
         updateScores(0,0,0,0);
         document.getElementById("result").textContent = "";
+        popup.classList.remove("show");
     }
 
     const contentContainer = document.getElementsByClassName("collapsible");
