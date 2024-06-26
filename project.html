@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dice Game Project</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/game.svg" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <img src="images/header.png" alt="Header Image">
+    </header>
+    <main>
+        <div class="container">
+            <div class="instructions">
+                <button type="button" class="collapsible">▼ How to Play</button>
+                <div class="content">
+                    <p>
+                        Welcome to the Dice Game! Here's how you can play:
+                    </p>
+                    <ul>
+                        <li>Click the "Roll Dice" button to roll a pair of dice for both the player and the computer.
+                        </li>
+                        <li>The scores for each roll are calculated and displayed below the dice.</li>
+                        <li>After three rolls, the total scores for both the player and the computer are displayed.</li>
+                        <li>The player with the highest total score wins the game!</li>
+                        <li>Click the "Reset Game" button to start a new game.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="rules">
+                <button type="button" class="collapsible">▼ Rules</button>
+                <div class="content">
+                    <p>
+                        The scoring for the game works as follows:
+                    </p>
+                    <ul>
+                        <li>If any of the dice show a 1, the score for that round is 0. For example, if you roll a 6 and
+                            1,
+                            your score is 0.</li>
+                        <li>If both dice show the same number, the score is the sum of the dice values times 2. For
+                            example,
+                            if you roll two 5s, your score is (5+5) * 2 = 20.</li>
+                        <li>Otherwise, the score is the sum of the dice values. For example, if you roll a 3 and 2, your
+                            score is 3 + 2 = 5.</li>
+                    </ul>
+
+                </div>
+            </div>
+
+            <div id="popup" class="popup">
+                <h3>Game Over</h3>
+                <button id="close-popup">&times;</button>
+                <div id="result"></div>
+            </div>
+            <div class="game-board">
+                <div class="player">
+                    <h2 id="you-name">You<img src="images/player.png" alt="player" class="avatar"></h2>
+                    <div class="dice-container" id="player-dice">
+                        <div class="single-dice-container">
+                            <h3>Dice #1</h3>
+                            <img src="images/unknown-dice.png" alt="Player Dice 1" class="dice" id="player-dice-1">
+                        </div>
+                        <div class="single-dice-container">
+                            <h3>Dice #2</h3>
+                            <img src="images/unknown-dice.png" alt="Player Dice 2" class="dice" id="player-dice-2">
+                        </div>
+                    </div>
+                    <p class="score">Score this round: <span id="player-round-score" class="score-number">0</span></p>
+                    <p class="score total-score">Total score: <span id="player-total-score" class="score-number">0</span>
+                    </p>
+                </div>
+
+                <div class="vertical-line"></div>
+
+                <div class="computer">
+                    <h2 id="computer-name">Computer<img src="images/computer.png" alt="computer" class="avatar"></h2>
+                    <div class="dice-container" id="computer-dice">
+                        <div class="single-dice-container">
+                            <h3>Dice #1</h3>
+                            <img src="images/unknown-dice.png" alt="Computer Dice 1" class="dice" id="computer-dice-1">
+                        </div>
+                        <div class="single-dice-container">
+                            <h3>Dice #2</h3>
+                            <img src="images/unknown-dice.png" alt="Computer Dice 2" class="dice" id="computer-dice-2">
+                        </div>
+                    </div>
+                    <p class="score">Score this round: <span id="computer-round-score" class="score-number">0</span></p>
+                    <p class="score total-score">Total score: <span id="computer-total-score" class="score-number">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="roll-dice">Roll Dice</button>
+                <button id="reset-game">New Game</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Yiqing Zheng</p>
+    </footer>
+    <script src="scripts/scripts.js"></script>
+</body>
+
+</html>
